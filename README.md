@@ -14,7 +14,6 @@
  ⚙ -- Create Page <br>
  ⚙ -- Spalash Page <br>
 
-
 ## 📚  Funcionalidade:
 
  ⚙ -- Dentro do aplicativo é possivel listar os cards com informações <br>
@@ -36,7 +35,6 @@
  ⚙ -- Neste apalicatvo foi aplicado Injeção de Dependência usando o package Getit<br>
  ⚙ -- Neste apalicatvo foi usado gestão de estado usando o package bloc<br>
  ⚙ -- Neste apalicatvo foi  usado clean architecture <br>
- ⚙ -- Neste apalicatvo foi aplicado o tocador <br>
  ⚙ -- Neste apalicatvo foi aplicado teste de widget <br>
 
 

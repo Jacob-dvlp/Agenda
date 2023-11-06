@@ -3,7 +3,7 @@
 
 <p> Este aplicativo  tem como objetivo Listar cards com informaço  permetir o usúario fazer o login e  criar novas informações e salvar no local Storage </p>
 
-<a href= "https://www.loom.com/share/e148936d884a42fbaf621593e87a38c8" > 
+<a href= "" > 
  <p> Link: Demostração do projeto</p>
 </a>
 

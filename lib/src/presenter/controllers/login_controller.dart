@@ -4,7 +4,6 @@ import 'package:app_processo_seletivo_target/src/data/client/local/shared_prefer
 import 'package:app_processo_seletivo_target/src/domain/usecases/login_usecase_i.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../helpers/login_failure.dart';
 import '../../domain/entities/entitie_user_model.dart';

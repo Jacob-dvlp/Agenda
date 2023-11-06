@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import '../../../helpers/login_failure.dart';
-import 'http_exception.dart';
 import 'http_response.dart';
 import 'i_http.dart';
 

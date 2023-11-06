@@ -2,7 +2,6 @@ import 'package:app_processo_seletivo_target/helpers/login_failure.dart';
 
 import 'package:app_processo_seletivo_target/src/domain/entities/entitie_user_model.dart';
 
-import 'package:dartz/dartz.dart';
 
 import '../../data/client/http_exception.dart';
 import '../respository/login_repository_l.dart';

@@ -3,7 +3,6 @@ import 'package:app_processo_seletivo_target/src/domain/datasource/remote/login_
 
 import 'package:app_processo_seletivo_target/src/domain/entities/entitie_user_model.dart';
 
-import 'package:dartz/dartz.dart';
 
 import '../../../domain/respository/login_repository_l.dart';
 import '../../client/http_exception.dart';

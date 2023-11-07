@@ -69,7 +69,7 @@
   
 ## Executando teste:
 
- Para Testar os teste de unidade deste projeto, é necessario  executar  o seguinte comando <h3> flutter test </h3> no terminar do Editor de código ou IDE que suporta Flutter e Dart 
+ Para Testar os teste de unidade deste projeto, é necessario  executar  o seguinte comando "flutter test" no terminar do Editor de código ou IDE que suporta Flutter e Dart 
 
  <br>
 

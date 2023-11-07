@@ -19,10 +19,9 @@ void main() {
   });
 
   var model = const EntitieUserModel(
-
     token:
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsInVzZXJuYW1lIjoidmNob2xkY3JvZnRnIiwiZW1haWwiOiJ2Y2hvbGRjcm9mdGdAdWNvei5jb20iLCJmaXJzdE5hbWUiOiJCcmFkZm9yZCIsImxhc3ROYW1lIjoiUHJvaGFza2EiLCJnZW5kZXIiOiJtYWxlIiwiaW1hZ2UiOiJodHRwczovL3JvYm9oYXNoLm9yZy9hY2N1c2FudGl1bXZvbHVwdGF0ZXNlb3MucG5nIiwiaWF0IjoxNjk5MzQyMjI0LCJleHAiOjE2OTkzNDU4MjR9.qY56nnJ5MA03za0XmiupLIHMqEJy2hRPhvQI6lSIliA",
-);
+  );
 
   test(
     'should get information de login from the repository',
@@ -32,11 +31,12 @@ void main() {
             username: "vcholdcroftg", passWord: "mSPzYZfR"),
       ).thenAnswer((_) async => model);
 
-      final result = await usecase.login(username: "vcholdcroftg", passWord: "mSPzYZfR");
+      final result =
+          await usecase.login(username: "vcholdcroftg", passWord: "mSPzYZfR");
       expect(result, model);
-      verify(() => mockLoginRepository.login(username: "vcholdcroftg", passWord: "mSPzYZfR"));
+      verify(() => mockLoginRepository.login(
+          username: "vcholdcroftg", passWord: "mSPzYZfR"));
       verifyNoMoreInteractions(mockLoginRepository);
     },
   );
-
 }

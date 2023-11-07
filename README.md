@@ -1,7 +1,7 @@
 ## APLICATIVO Target
  
 
-<p> Este aplicativo  tem como objetivo Listar cards com informaço  permetir o usúario fazer o login e  criar novas informações e salvar no local Storage </p>
+<p> Este aplicativo  tem como objetivo Listar cards com informações,  permetir o usúario fazer o login, editar informação, excluir informação  e salvar informação no local Storage </p>
 
 <a href= "https://we.tl/t-M5CMoti2Be" > 
 

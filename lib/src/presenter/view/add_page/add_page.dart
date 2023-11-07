@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:app_processo_seletivo_target/src/presenter/view/home/home_page.dart';
+import 'package:app_processo_seletivo_target/src/presenter/view/shared/elevation_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
@@ -61,11 +62,8 @@ class _AddPageState extends State<AddPage> {
                 Observer(
                   builder: (context) {
                     return !createNewTodoApp.isLoading
-                        ? ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                elevation: 20,
-                                padding: const EdgeInsetsDirectional.symmetric(
-                                    horizontal: 130, vertical: 15)),
+                        ? ElevationButton(
+
                             onPressed: () async {
                               if (createNewTodoApp
                                   .nameController.text.isEmpty) {
@@ -106,7 +104,7 @@ class _AddPageState extends State<AddPage> {
                                 );
                               }
                             },
-                            child: const Text("Salvar Contacto"),
+                            child: "Guardar",
                           )
                         : const Center(
                             child: CircularProgressIndicator.adaptive(),

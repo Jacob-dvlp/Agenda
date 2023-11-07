@@ -6,6 +6,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../controllers/login_controller/login_controller.dart';
+import '../shared/elevation_button.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -77,12 +78,7 @@ class LoginPage extends StatelessWidget {
             ),
             Observer(
               builder: (context) => !_loginControllerApp.isLoading
-                  ? ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 20,
-                        padding: const EdgeInsetsDirectional.symmetric(
-                            horizontal: 120, vertical: 15),
-                      ),
+                  ? ElevationButton(
                       onPressed: () async {
                         if (_loginControllerApp
                                 .usernameController.text.isEmpty ||
@@ -128,7 +124,7 @@ class LoginPage extends StatelessWidget {
                           }
                         }
                       },
-                      child: const Text("Entrar"),
+                      child: "Entrar",
                     )
                   : const Center(
                       child: CircularProgressIndicator.adaptive(),

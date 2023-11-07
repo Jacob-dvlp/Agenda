@@ -3,11 +3,9 @@
 
 <p> Este aplicativo  tem como objetivo Listar cards com informações,  permetir o usúario fazer o login, editar informação, excluir informação  e salvar informação no local Storage </p>
 
-<a href= "https://we.tl/t-M5CMoti2Be" > 
 
- <p> Link: Demostração do projeto vídeo</p>
-</a>
-
+ <p> Link: Demostração do projeto</p>
+ 
 [![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://www.youtube.com/watch?v=-n5u1K2_Puk)
 
 ## 📚 Telas do aplicativo.

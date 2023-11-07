@@ -13,7 +13,7 @@
  ⚙ -- Login Page<br>
  ⚙ -- Home Page  <br>
  ⚙ -- Create Page <br>
- ⚙ -- Spalash Page <br>
+ ⚙ -- Splashscreen Page <br>
 
 ## 📚  Funcionalidade:
 
@@ -29,7 +29,6 @@
 
  ⚙ -- Dentro do aplicativo é possivel  terminar sessão <br>
 
-## 📚  Conceitos aplicado no Código  e não aplicado:
 
  ⚙ -- Neste apalicatvo foi implementado Injeção de Dependência usando o package Getit<br>
 

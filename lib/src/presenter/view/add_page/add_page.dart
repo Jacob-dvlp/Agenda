@@ -63,7 +63,6 @@ class _AddPageState extends State<AddPage> {
                   builder: (context) {
                     return !createNewTodoApp.isLoading
                         ? ElevationButton(
-
                             onPressed: () async {
                               if (createNewTodoApp
                                   .nameController.text.isEmpty) {
@@ -83,7 +82,8 @@ class _AddPageState extends State<AddPage> {
                                         content: Text(
                                             "Nome muito culto,deve conter no maxímo 3 letras")));
                                 return;
-                              }  if (widget.name != null) {
+                              }
+                              if (widget.name != null) {
                                 await createNewTodoApp.update(
                                     id: widget.id!,
                                     name: createNewTodoApp.nameController.text,
@@ -93,8 +93,7 @@ class _AddPageState extends State<AddPage> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             const HomePage()));
-                              }else
-                              {
+                              } else {
                                 await createNewTodoApp.create(context);
                                 Navigator.pushReplacement(
                                   context,

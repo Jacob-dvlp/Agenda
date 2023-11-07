@@ -1,1 +1,1 @@
-final RegExp alphabetRegex = RegExp(r'^[a-zA-Z]+$');
+final RegExp alphabetRegex = RegExp(r'^[A-Za-z0-9_.]+$');

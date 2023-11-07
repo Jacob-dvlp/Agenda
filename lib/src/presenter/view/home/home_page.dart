@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: const Key("home"),
       drawer: const DrawerScreen(),
       floatingActionButton: CircleAvatar(
         child: IconButton(

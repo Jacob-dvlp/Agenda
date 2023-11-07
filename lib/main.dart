@@ -7,7 +7,6 @@ import 'app_widget.dart';
 
 void main()  {
   Dependencies().inject();
-
   Dependencies.getIt<LoginControllerApp>();
   runApp(const AppWidget());
 }

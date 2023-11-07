@@ -3,8 +3,9 @@
 
 <p> Este aplicativo  tem como objetivo Listar cards com informaço  permetir o usúario fazer o login e  criar novas informações e salvar no local Storage </p>
 
-<a href= "" > 
- <p> Link: Demostração do projeto</p>
+<a href= "https://we.tl/t-M5CMoti2Be" > 
+
+ <p> Link: Demostração do projeto vídeo</p>
 </a>
 
 ## 📚 Telas do aplicativo.
@@ -30,12 +31,23 @@
 
 ## 📚  Conceitos aplicado no Código  e não aplicado:
 
- ⚙ -- Neste apalicatvo foi aplicado Injeção de Dependência usando o package Getit<br>
- ⚙ -- Neste apalicatvo foi usado gestão de estado usando o package bloc<br>
- ⚙ -- Neste apalicatvo foi  usado clean architecture <br>
+ ⚙ -- Neste apalicatvo foi implementado Injeção de Dependência usando o package Getit<br>
+
+ ⚙ -- Neste aplicatvo foi implementado gestão de estado usando o package Mobx <br>
+
+ ⚙ -- Neste apalicatvo foi  implementado clean architecture e SOLID  <br>
+
+ ⚙ -- Neste apalicatvo implementado API para fazer login  com ajuda do pacote Dio <br>
+
+ ⚙ -- Neste apalicatvo implementado local Storage para salver os dados localmente usando o pacote Shared_prefrences <br>
+
  ⚙ -- Neste apalicatvo foi aplicado teste de unidades <br>
 
-## Linguágem usado e FrameWork:
+ ## Credenciais para Login no aplicativo:
+ ⚙ username: vcholdcroftg <br>
+ ⚙ senha: mSPzYZfR <br>
+
+## Linguagem usado e FrameWork:
 
 <br>
 ⚙ Dart <br>
@@ -59,6 +71,8 @@
 ## Executando teste:
 
  Para Testar os teste de unidade deste projeto, é necessario  executar  o seguinte comando <h3> flutter test </h3> no terminar do Editor de código ou IDE que suporta Flutter e Dart 
+
+ <br>
 
 ## Executando o projeto flutter.:
  <br>

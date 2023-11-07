@@ -25,6 +25,22 @@ mixin _$LoginControllerApp on LoginController, Store {
     });
   }
 
+  late final _$showPasswhordAtom =
+      Atom(name: 'LoginController.showPasswhord', context: context);
+
+  @override
+  bool get showPasswhord {
+    _$showPasswhordAtom.reportRead();
+    return super.showPasswhord;
+  }
+
+  @override
+  set showPasswhord(bool value) {
+    _$showPasswhordAtom.reportWrite(value, super.showPasswhord, () {
+      super.showPasswhord = value;
+    });
+  }
+
   late final _$loginAsyncAction =
       AsyncAction('LoginController.login', context: context);
 
@@ -35,6 +51,17 @@ mixin _$LoginControllerApp on LoginController, Store {
 
   late final _$LoginControllerActionController =
       ActionController(name: 'LoginController', context: context);
+
+  @override
+  dynamic showPasswhordText(bool value) {
+    final _$actionInfo = _$LoginControllerActionController.startAction(
+        name: 'LoginController.showPasswhordText');
+    try {
+      return super.showPasswhordText(value);
+    } finally {
+      _$LoginControllerActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
   dynamic checkLogin(bool value) {
@@ -50,7 +77,8 @@ mixin _$LoginControllerApp on LoginController, Store {
   @override
   String toString() {
     return '''
-isLoading: ${isLoading}
+isLoading: ${isLoading},
+showPasswhord: ${showPasswhord}
     ''';
   }
 }

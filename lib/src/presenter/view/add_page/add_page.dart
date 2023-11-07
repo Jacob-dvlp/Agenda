@@ -82,19 +82,10 @@ class _AddPageState extends State<AddPage> {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                         backgroundColor: Colors.red,
-                                        content: Text("Nome muito culto,deve conter no maxímo 3 letras")));
+                                        content: Text(
+                                            "Nome muito culto,deve conter no maxímo 3 letras")));
                                 return;
-                              } else if (!alphabetRegex.hasMatch(
-                                  createNewTodoApp.nameController.text)) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    backgroundColor: Colors.red,
-                                    content: Text(
-                                        "Caractéres especiais  não são permetidos"),
-                                  ),
-                                );
-                                return;
-                              } else if (widget.name != null) {
+                              }  if (widget.name != null) {
                                 await createNewTodoApp.update(
                                     id: widget.id!,
                                     name: createNewTodoApp.nameController.text,
@@ -104,7 +95,7 @@ class _AddPageState extends State<AddPage> {
                                     MaterialPageRoute(
                                         builder: (context) =>
                                             const HomePage()));
-                              }
+                              }else
                               {
                                 await createNewTodoApp.create(context);
                                 Navigator.pushReplacement(

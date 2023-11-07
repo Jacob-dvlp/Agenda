@@ -1,10 +1,11 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:app_processo_seletivo_target/helpers/rgx.dart';
-import 'package:app_processo_seletivo_target/src/presenter/controllers/login_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
+
+import '../../controllers/login_controller/login_controller.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -24,7 +25,7 @@ class LoginPage extends StatelessWidget {
               height: 40,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
                   TextFormField(
@@ -41,19 +42,33 @@ class LoginPage extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  TextFormField(
-                    controller: _loginControllerApp.passWordController,
-                    keyboardType: TextInputType.name,
-                    decoration: InputDecoration(
-                      label: const Text("Digite sua senha"),
-                      suffixIcon: IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.visibility)),
-                      prefixIcon: const Icon(Icons.lock),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
+                  Observer(
+                    builder: (context) => TextFormField(
+                      controller: _loginControllerApp.passWordController,
+                      obscureText: _loginControllerApp.showPasswhord,
+                      keyboardType: TextInputType.name,
+                      decoration: InputDecoration(
+                        label: const Text("Digite sua senha"),
+                        suffixIcon: _loginControllerApp.showPasswhord
+                            ? IconButton(
+                                onPressed: () {
+                                  _loginControllerApp.showPasswhordText(false);
+                                },
+                                icon: const Icon(Icons.visibility_off_outlined),
+                              )
+                            : IconButton(
+                                onPressed: () {
+                                  _loginControllerApp.showPasswhordText(true);
+                                },
+                                icon: const Icon(Icons.visibility_outlined),
+                              ),
+                        prefixIcon: const Icon(Icons.lock),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
@@ -79,6 +94,7 @@ class LoginPage extends StatelessWidget {
                                 content:
                                     Text("Campos vazios não são permetidos")),
                           );
+                          return;
                         }
                         if (_loginControllerApp
                                     .usernameController.text.length <=
@@ -92,6 +108,7 @@ class LoginPage extends StatelessWidget {
                                 content: Text(
                                     "Usename ou senha não pode conter menos que 3 letras")),
                           );
+                          return;
                         } else if (!alphabetRegex.hasMatch(
                                 _loginControllerApp.usernameController.text) ||
                             !alphabetRegex.hasMatch(

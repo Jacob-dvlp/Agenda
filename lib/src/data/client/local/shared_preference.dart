@@ -7,7 +7,7 @@ Future<bool> create({required String token}) async {
 
 Future<String> read({required String? key}) async {
   final sharedPreferences = await SharedPreferences.getInstance();
-  return sharedPreferences.getString(key!)!;
+  return sharedPreferences.getString(key!)??"";
 }
 
 Future<bool> remove({required String key}) async {

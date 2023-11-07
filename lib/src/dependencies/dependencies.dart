@@ -1,7 +1,6 @@
 import 'package:app_processo_seletivo_target/src/data/client/http_client.dart';
 import 'package:app_processo_seletivo_target/src/data/infra/repository/todo_list_repository_imp.dart';
 import 'package:app_processo_seletivo_target/src/domain/usecases/login_usecase_imp.dart';
-import 'package:app_processo_seletivo_target/src/presenter/controllers/login_controller.dart';
 import 'package:get_it/get_it.dart';
 
 import '../data/client/i_http.dart';
@@ -16,6 +15,7 @@ import '../domain/usecases/login_usecase_i.dart';
 import '../domain/usecases/todo_list_usecase_i.dart';
 import '../domain/usecases/todo_list_usecase_imp.dart';
 import '../presenter/controllers/home_controller/home_controller.dart';
+import '../presenter/controllers/login_controller/login_controller.dart';
 
 class Dependencies {
   static final getIt = GetIt.instance;

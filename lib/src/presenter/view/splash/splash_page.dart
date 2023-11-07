@@ -11,7 +11,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  String token = "";
+  String ? token;
   getToken() async {
     token = await read(key: "token");
   }
@@ -22,13 +22,13 @@ class _SplashPageState extends State<SplashPage> {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        if (token.isEmpty) {
+        if (token!.isEmpty) {
           return Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) => LoginPage(),
               ));
-        } else if (token.isNotEmpty) {
+        } else if (token!.isNotEmpty) {
           return Navigator.pushReplacement(
             context,
             MaterialPageRoute(

@@ -8,7 +8,7 @@
  <p> Link: Demostração do projeto vídeo</p>
 </a>
 
-[![Watch the video](https://we.tl/t-M5CMoti2Be)](https://we.tl/t-M5CMoti2Be)
+[![Watch the video](https://i.stack.imgur.com/Vp2cE.png)](https://www.youtube.com/watch?v=-n5u1K2_Puk)
 
 ## 📚 Telas do aplicativo.
 

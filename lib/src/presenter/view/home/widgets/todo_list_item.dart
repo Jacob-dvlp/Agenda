@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:app_processo_seletivo_target/helpers/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -36,123 +37,126 @@ class _TodoListItemState extends State<TodoListItem> {
       onDismissed: (direction) async {
         if (direction == DismissDirection.startToEnd ||
             direction == DismissDirection.endToStart) {
-          showAdaptiveDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog.adaptive(
-                title: const Text("Confirmação"),
-                content: const Text("Continuar excluindo?"),
-                actions: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      CircleAvatar(
-                        child: IconButton(
-                            onPressed: () {
-                              setState(() {
-                                homeControllerApp.read();
-                              });
-                              Navigator.pop(context);
-
-                              DismissDirection.none;
-                            },
-                            icon: const Icon(Icons.close)),
-                      ),
-                      CircleAvatar(
-                        child: IconButton(
-                          onPressed: () {
-                            homeControllerApp.delete(widget.itemIndex);
-
-                            Navigator.of(context).pop();
-                          },
-                          icon: const Icon(Icons.check),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              );
-            },
-          );
+          _showDeleteItemDialog(context);
         }
       },
       child: _buildBody(context),
     );
   }
 
+  Future<dynamic> _showDeleteItemDialog(BuildContext context) {
+    return showAdaptiveDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog.adaptive(
+          title: const Text("Confirmação"),
+          content: const Text("Continuar excluindo?"),
+          actions: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CircleAvatar(
+                  child: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          homeControllerApp.read();
+                        });
+                        Navigator.pop(context);
+
+                        DismissDirection.none;
+                      },
+                      icon: const Icon(Icons.close)),
+                ),
+                CircleAvatar(
+                  child: IconButton(
+                    onPressed: () {
+                      homeControllerApp.delete(widget.itemIndex);
+
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(Icons.check),
+                  ),
+                ),
+              ],
+            )
+          ],
+        );
+      },
+    );
+  }
+
+  Future<dynamic> _showEditItemDialog(BuildContext context) {
+    return showAdaptiveDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog.adaptive(
+          title: const Text("Confirmação"),
+          content: const Text("Continuar editando?"),
+          actions: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CircleAvatar(
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(Icons.close)),
+                ),
+                CircleAvatar(
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AddPage(
+                              id: widget.itemIndex,
+                              name: homeControllerApp
+                                  .entitieUserModel![widget.itemIndex]
+                                  .toString()),
+                        ),
+                      );
+                    },
+                    icon: const Icon(Icons.check),
+                  ),
+                ),
+              ],
+            )
+          ],
+        );
+      },
+    );
+  }
+
   Card _buildBody(BuildContext context) {
     return Card(
-      shape: const RoundedRectangleBorder(),
-      elevation: 15,
+      elevation: 4,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(kDefaultPadding / 2),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
-                CircleAvatar(
-                  child: Text(widget.itemIndex.toString()),
-                ),
+                CircleAvatar(child: Text(widget.itemIndex.toString())),
+                const SizedBox(width: kDefaultPadding / 2),
                 Text(homeControllerApp.entitieUserModel![widget.itemIndex]
                     .toString()),
-                const SizedBox(
-                  width: 4,
-                ),
               ],
             ),
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: () => showAdaptiveDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog.adaptive(
-                        title: const Text("Confirmação"),
-                        content: const Text("Continuar editando?"),
-                        actions: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              CircleAvatar(
-                                child: IconButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    icon: const Icon(Icons.close)),
-                              ),
-                              CircleAvatar(
-                                child: IconButton(
-                                  onPressed: () {
-                                    Navigator.pushReplacement(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => AddPage(
-                                            id: widget.itemIndex,
-                                            name: homeControllerApp
-                                                .entitieUserModel![
-                                                    widget.itemIndex]
-                                                .toString()),
-                                      ),
-                                    );
-                                  },
-                                  icon: const Icon(Icons.check),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      );
-                    },
-                  ),
-                  child: const CircleAvatar(
-                    backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.edit_outlined,
-                    ),
-                  ),
+            GestureDetector(
+              onTap: () => _showEditItemDialog(context),
+              child: const CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.edit_outlined,
                 ),
-              ],
+              ),
             )
           ],
         ),

@@ -1,3 +1,4 @@
+import 'package:app_processo_seletivo_target/helpers/constants.dart';
 import 'package:app_processo_seletivo_target/src/presenter/view/home/widgets/todo_list_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -27,16 +28,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: const Key("home"),
-      drawer: const DrawerScreen(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushReplacementNamed(context, "/add");
-        },
-        child: const Icon(Icons.add),
-      ),
       appBar: AppBar(
         title: const Text('Todo List'),
       ),
+      drawer: const DrawerScreen(),
       body: Observer(
         builder: (context) {
           return homeControllerApp.isLoadingReadData
@@ -45,6 +40,12 @@ class _HomePageState extends State<HomePage> {
                 )
               : _buildBodySection();
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, "/add");
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -56,8 +57,11 @@ class _HomePageState extends State<HomePage> {
           )
         : Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ListView.builder(
+            child: ListView.separated(
               itemCount: homeControllerApp.entitieUserModel!.length,
+              separatorBuilder: (context, index) {
+                return const SizedBox(height: kDefaultPadding / 2);
+              },
               itemBuilder: (context, index) {
                 return TodoListItem(
                   itemIndex: index,

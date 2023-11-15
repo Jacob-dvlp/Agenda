@@ -14,9 +14,6 @@ abstract class HomeController with Store {
   late final TodoListUsecaseI todoListUsecaseI;
   HomeController({required this.todoListUsecaseI});
 
-
-
-
   @action
   Future read() async {
     loadingreadData(true);
@@ -26,7 +23,7 @@ abstract class HomeController with Store {
 
   @action
   Future delete(int id) async {
-   await todoListUsecaseI.delete(id: id);
+    await todoListUsecaseI.delete(id: id);
   }
 
   @action

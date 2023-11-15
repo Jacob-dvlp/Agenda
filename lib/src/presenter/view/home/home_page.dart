@@ -27,13 +27,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       key: const Key("home"),
       drawer: const DrawerScreen(),
-      floatingActionButton: CircleAvatar(
-        child: IconButton(
-          onPressed: () {
-            Navigator.pushReplacementNamed(context, "/add");
-          },
-          icon: const Icon(Icons.add),
-        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, "/add");
+        },
+        child: const Icon(Icons.add),
       ),
       appBar: AppBar(
         title: const Text('Todo List'),

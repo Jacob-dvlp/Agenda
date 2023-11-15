@@ -10,9 +10,11 @@ class ElevationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        elevation: 20,
+        elevation: 8,
         padding: const EdgeInsetsDirectional.symmetric(
-            horizontal: 130, vertical: 15),
+          horizontal: 130,
+          vertical: 15,
+        ),
       ),
       onPressed: onPressed,
       child: Text(child),

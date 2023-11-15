@@ -55,7 +55,9 @@ mixin _$LoginControllerApp on LoginController, Store {
   @override
   dynamic showPasswhordText(bool value) {
     final _$actionInfo = _$LoginControllerActionController.startAction(
-        name: 'LoginController.showPasswhordText');
+      name: 'LoginController.showPasswhordText',
+    );
+    
     try {
       return super.showPasswhordText(value);
     } finally {

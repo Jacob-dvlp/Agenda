@@ -10,7 +10,6 @@ import 'package:mobx/mobx.dart';
 import '../../../../helpers/login_failure.dart';
 import '../../../domain/entities/entitie_user_model.dart';
 
-
 part 'login_controller.g.dart';
 
 class LoginControllerApp = LoginController with _$LoginControllerApp;
@@ -19,7 +18,7 @@ abstract class LoginController with Store {
   @observable
   bool isLoading = false;
   @observable
-  bool showPasswhord = false;
+  bool showPasswhord = true;
   EntitieUserModel? entitieUserModel;
 
   final usernameController = TextEditingController();

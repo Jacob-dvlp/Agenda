@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../../../helpers/rgx.dart';
 import '../../controllers/create_new_todo_controller/create_controller.dart';
 
 class AddPage extends StatefulWidget {
@@ -31,12 +30,12 @@ class _AddPageState extends State<AddPage> {
         automaticallyImplyLeading: false,
         title: const Text('Criar'),
       ),
-      floatingActionButton: IconButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
         },
-        icon: const CircleAvatar(child: Icon(Icons.arrow_back)),
+        child: const Icon(Icons.arrow_back),
       ),
       body: SizedBox(
         child: Center(

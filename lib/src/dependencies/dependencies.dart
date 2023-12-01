@@ -29,7 +29,7 @@ class Dependencies {
       () => LoginControllerApp(loginIUsecase: getIt.get()),
     );
 
-    getIt.registerFactory(
+    getIt.registerLazySingleton<HomeControllerApp>(
         () => HomeControllerApp(todoListUsecaseI: getIt.get()));
     //datasource
     getIt.registerLazySingleton<LoginDatasourceI>(

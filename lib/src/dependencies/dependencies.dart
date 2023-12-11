@@ -1,6 +1,7 @@
 import 'package:app_processo_seletivo_target/src/data/client/http_client.dart';
 import 'package:app_processo_seletivo_target/src/data/infra/repository/todo_list_repository_imp.dart';
 import 'package:app_processo_seletivo_target/src/domain/usecases/login_usecase_imp.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
 
 import '../data/client/i_http.dart';
@@ -21,9 +22,6 @@ class Dependencies {
   static final getIt = GetIt.instance;
 
   inject() {
-    getIt.registerLazySingleton<IHttp>(
-      () => HttpClient(),
-    );
     //Controller
     getIt.registerFactory(
       () => LoginControllerApp(loginIUsecase: getIt.get()),
@@ -53,4 +51,5 @@ class Dependencies {
       () => TodoListUsecaseImp(todoListRepositoryI: getIt.get()),
     );
   }
+
 }

@@ -42,6 +42,8 @@ dependencies:
   integration_test:
 
     sdk: flutter
+  riverpod: ^2.4.9
+  flutter_riverpod: ^2.4.9
 
 dev_dependencies:
   flutter_test:
